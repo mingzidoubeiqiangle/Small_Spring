@@ -1,18 +1,17 @@
 package src.main.java.springframework.factory.support;
 
-import main.java.springframework.BeanDefinition;
 import src.main.java.springframework.BeansException;
 import src.main.java.springframework.factory.BeanFactory;
+import src.main.java.springframework.factory.config.BeanDefinition;
 
 public abstract class AbstractBeanFactory  extends DefaultSingletonBeanRegistry implements BeanFactory {
-    @Override
+
     public Object getBean(String name) throws BeansException {
         Object bean = getSingleton(name);
         if (bean != null) {
-            //为什么可能是个null呢 因为 他是
+            //为什么可能是个null呢
             return bean;
         }
-
         BeanDefinition beanDefinition = getBeanDefinition(name);
         return createBean(name, beanDefinition);
     }

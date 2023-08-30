@@ -1,4 +1,7 @@
 package src.main.java.springframework.factory.support;
 
-public class BeanDefinitionRegistry {
+import src.main.java.springframework.factory.config.BeanDefinition;
+
+public interface BeanDefinitionRegistry {
+    void registerBeanDefinition(String beanName, BeanDefinition beanDefinition);
 }

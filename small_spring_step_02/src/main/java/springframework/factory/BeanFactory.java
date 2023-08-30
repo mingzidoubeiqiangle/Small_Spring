@@ -1,7 +1,6 @@
 package src.main.java.springframework.factory;
 
 
-import main.java.springframework.BeanDefinition;
 import src.main.java.springframework.BeansException;
 
 import java.util.Map;
@@ -12,7 +11,7 @@ public interface BeanFactory {
     //无参的获取
     public Object getBean(String name) throws BeansException;
 
-    //有参的获取 Bean对象
+//    有参的获取 Bean对象
     public Object getBean(String name,Object... args) throws BeansException;
 
     /**
